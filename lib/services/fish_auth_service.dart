@@ -1,7 +1,7 @@
 import "dart:convert";
 import "dart:math";
 import "package:shared_preferences/shared_preferences.dart";
-import "../models/user.dart";
+import "../models/fish_user.dart";
 
 class AuthService {
   static const String _userKey = "current_user";
@@ -31,7 +31,7 @@ class AuthService {
     final userId = _generateUserId();
     
     // 创建新用户或获取现有用户
-    User user = User(
+    FishUser user = FishUser(
       nickname: nickname,
       userId: userId,
       scores: await _loadUserScores(nickname),
@@ -52,12 +52,12 @@ class AuthService {
   }
 
   // 获取当前用户
-  static Future<User?> getCurrentUser() async {
+  static Future<FishUser?> getCurrentUser() async {
     final prefs = await SharedPreferences.getInstance();
     final userJson = prefs.getString(_userKey);
     
     if (userJson != null) {
-      return User.fromJson(jsonDecode(userJson));
+      return FishUser.fromJson(jsonDecode(userJson));
     }
     return null;
   }
@@ -67,7 +67,7 @@ class AuthService {
     final user = await getCurrentUser();
     if (user == null) return;
 
-    final gameScore = GameScore(
+    final gameScore = FishGameScore(
       difficulty: difficulty,
       score: score,
       totalQuestions: totalQuestions,
@@ -75,13 +75,13 @@ class AuthService {
     );
 
     // 更新用户成绩
-    final updatedScores = Map<String, List<GameScore>>.from(user.scores);
+    final updatedScores = Map<String, List<FishGameScore>>.from(user.scores);
     if (!updatedScores.containsKey(difficulty)) {
       updatedScores[difficulty] = [];
     }
     updatedScores[difficulty]!.add(gameScore);
 
-    final updatedUser = User(
+    final updatedUser = FishUser(
       nickname: user.nickname,
       userId: user.userId,
       scores: updatedScores,
@@ -93,7 +93,7 @@ class AuthService {
   }
 
   // 加载用户成绩
-  static Future<Map<String, List<GameScore>>> _loadUserScores(String nickname) async {
+  static Future<Map<String, List<FishGameScore>>> _loadUserScores(String nickname) async {
     final prefs = await SharedPreferences.getInstance();
     final scoresKey = "scores_$nickname";
     final scoresJson = prefs.getString(scoresKey);

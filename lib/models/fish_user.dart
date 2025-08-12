@@ -1,9 +1,9 @@
 import "dart:math";
 
-class User {
+class FishUser {
   final String nickname;
   final String userId;
-  final Map<String, List<GameScore>> scores;
+  final Map<String, List<FishGameScore>> scores;
 
   User({
     required this.nickname,
@@ -19,21 +19,21 @@ class User {
     };
   }
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(
+  factory FishUser.fromJson(Map<String, dynamic> json) {
+    return FishUser(
       nickname: json["nickname"] ?? "",
       userId: json["userId"] ?? "",
       scores: (json["scores"] as Map<String, dynamic>?)?.map(
         (key, value) => MapEntry(
           key, 
-          (value as List).map((score) => GameScore.fromJson(score)).toList()
+          (value as List).map((score) => FishGameScore.fromJson(score)).toList()
         ),
       ) ?? {},
     );
   }
 }
 
-class GameScore {
+class FishGameScore {
   final String difficulty;
   final int score;
   final int totalQuestions;
@@ -55,8 +55,8 @@ class GameScore {
     };
   }
 
-  factory GameScore.fromJson(Map<String, dynamic> json) {
-    return GameScore(
+  factory FishGameScore.fromJson(Map<String, dynamic> json) {
+    return FishGameScore(
       difficulty: json["difficulty"],
       score: json["score"],
       totalQuestions: json["totalQuestions"],

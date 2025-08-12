@@ -1,14 +1,14 @@
 import "package:flutter/material.dart";
-import "../services/auth_service.dart";
+import "../services/fish_auth_service.dart";
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class FishLoginScreen extends StatefulWidget {
+  const FishLoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<FishLoginScreen> createState() => _FishLoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _FishLoginScreenState extends State<FishLoginScreen> {
   final TextEditingController _nicknameController = TextEditingController();
   bool _isLoading = false;
   bool _agreedToTerms = false;
