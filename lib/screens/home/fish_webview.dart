@@ -118,7 +118,7 @@ class _WebViewPageState extends State<WebViewPage>
                       },
                                               child: ClipOval(
                           child: Image.asset(
-                            'assets/images/logo.jpg',
+                            'assets/images/logo.png',
                             width: 120,
                             height: 120,
                             fit: BoxFit.cover,
