@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Documents - KidsMath</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .app-logo {
+            font-size: 64px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        .document-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .document-link {
+            display: block;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .document-link:hover {
+            background-color: #45a049;
+        }
+        .document-link:nth-child(2) {
+            background-color: #2196F3;
+        }
+        .document-link:nth-child(2):hover {
+            background-color: #1976D2;
+        }
+        .app-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .app-info h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            background-color: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .last-updated {
+            color: #666;
+            font-size: 14px;
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .document-links {
+                gap: 15px;
+            }
+            .document-link {
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-logo">📚</div>
+        <h1>KidsMath Legal Documents</h1>
+        
+        <div class="description">
+            Educational math game for children aged 4+<br>
+            Safe, fun, and privacy-focused learning
+        </div>
+
+        <div class="document-links">
+            <a href="privacy-policy.html" class="document-link">
+                🔒 Privacy Policy
+            </a>
+            <a href="terms-of-service.html" class="document-link">
+                📋 Terms of Service
+            </a>
+        </div>
+
+        <div class="app-info">
+            <h3>About KidsMath</h3>
+            <p>KidsMath is an educational mobile application designed to help children learn basic arithmetic operations through interactive games and visual representations. The app features:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Visual fruit-based math problems</li>
+                <li>Multiple difficulty levels</li>
+                <li>Progress tracking</li>
+                <li>Audio feedback</li>
+                <li>Offline functionality</li>
+                <li>COPPA compliant design</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>
+                <strong>Privacy Questions:</strong> privacy@good2good.tech<br>
+                <strong>General Support:</strong> support@good2good.tech<br>
+                <strong>Developer:</strong> KidsMath Development Team
+            </p>
+        </div>
+
+        <div class="last-updated">
+            <strong>Documents Last Updated:</strong> January 1, 2025<br>
+            <strong>App Version:</strong> 1.0.0<br>
+            <strong>Platform:</strong> iOS & Android
+        </div>
+    </div>
+
+    <script>
+        // Simple analytics-free click tracking for document access
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.document-link');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('Document accessed: ' + this.textContent.trim());
+                });
+            });
+        });
+    </script>
+</body>
+</html>
