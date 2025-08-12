@@ -10,7 +10,7 @@ class FishProfileScreen extends StatefulWidget {
 }
 
 class _FishProfileScreenState extends State<FishProfileScreen> with TickerProviderStateMixin {
-  User? _user;
+  FishUser? _user;
   late AnimationController _avatarController;
   late AnimationController _bubbleController;
   late Animation<double> _avatarAnimation;
@@ -412,7 +412,7 @@ class _FishProfileScreenState extends State<FishProfileScreen> with TickerProvid
     );
   }
 
-  Widget _buildScoreCard(String difficulty, List<GameScore> scores) {
+  Widget _buildScoreCard(String difficulty, List<FishGameScore> scores) {
     if (scores.isEmpty) {
       return Container(
         padding: const EdgeInsets.all(24),

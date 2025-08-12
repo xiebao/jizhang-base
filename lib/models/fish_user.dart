@@ -5,7 +5,7 @@ class FishUser {
   final String userId;
   final Map<String, List<FishGameScore>> scores;
 
-  User({
+  FishUser({
     required this.nickname,
     required this.userId,
     required this.scores,
@@ -39,7 +39,7 @@ class FishGameScore {
   final int totalQuestions;
   final DateTime date;
 
-  GameScore({
+  FishGameScore({
     required this.difficulty,
     required this.score,
     required this.totalQuestions,

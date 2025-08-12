@@ -103,7 +103,7 @@ class AuthService {
       return scoresMap.map(
         (key, value) => MapEntry(
           key, 
-          (value as List).map((score) => GameScore.fromJson(score)).toList()
+          (value as List).map((score) => FishGameScore.fromJson(score)).toList()
         ),
       );
     }
