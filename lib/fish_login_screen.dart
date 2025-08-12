@@ -52,12 +52,12 @@ class _FishLoginScreenState extends State<FishLoginScreen>
 
   Future<void> _login() async {
     if (_nicknameController.text.isEmpty) {
-      _showError("请输入您的昵称");
+      _showError("Please enter your nickname");
       return;
     }
 
     if (!_agreedToTerms) {
-      _showError("请同意用户协议和隐私政策");
+      _showError("Please agree to the User Agreement and Privacy Policy");
       return;
     }
 
@@ -74,12 +74,12 @@ class _FishLoginScreenState extends State<FishLoginScreen>
         }
       } else {
         if (mounted) {
-          _showError("登录失败，请重试");
+          _showError("Login failed. Please try again.");
         }
       }
     } catch (e) {
       if (mounted) {
-        _showError("登录失败，请重试");
+        _showError("Login failed. Please try again.");
       }
     } finally {
       if (mounted) {
@@ -212,24 +212,24 @@ class _FishLoginScreenState extends State<FishLoginScreen>
                         style: TextStyle(fontSize: 80),
                       ),
                       const SizedBox(height: 16),
-                      const Text(
-                        '欢迎来到海洋数学世界',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        '和海洋朋友们一起学习数学吧！',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 16,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+                                             const Text(
+                         'Welcome to Ocean Math World',
+                         style: TextStyle(
+                           color: Colors.white,
+                           fontSize: 28,
+                           fontWeight: FontWeight.bold,
+                         ),
+                         textAlign: TextAlign.center,
+                       ),
+                       const SizedBox(height: 8),
+                       const Text(
+                         'Learn math with ocean friends!',
+                         style: TextStyle(
+                           color: Colors.white70,
+                           fontSize: 16,
+                         ),
+                         textAlign: TextAlign.center,
+                       ),
                     ],
                   ),
                   
@@ -251,14 +251,14 @@ class _FishLoginScreenState extends State<FishLoginScreen>
                     ),
                     child: Column(
                       children: [
-                        const Text(
-                          "昵称",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF3B82F6),
-                          ),
-                        ),
+                                                 const Text(
+                           "Nickname",
+                           style: TextStyle(
+                             fontSize: 18,
+                             fontWeight: FontWeight.bold,
+                             color: Color(0xFF3B82F6),
+                           ),
+                         ),
                         const SizedBox(height: 16),
                         Container(
                           decoration: BoxDecoration(
@@ -268,15 +268,15 @@ class _FishLoginScreenState extends State<FishLoginScreen>
                           child: TextField(
                             controller: _nicknameController,
                             keyboardType: TextInputType.text,
-                            decoration: const InputDecoration(
-                              hintText: "请输入您的昵称",
-                              prefixIcon: Icon(Icons.person, color: Color(0xFF3B82F6)),
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 16,
-                              ),
-                            ),
+                                                         decoration: const InputDecoration(
+                               hintText: "Enter your nickname",
+                               prefixIcon: Icon(Icons.person, color: Color(0xFF3B82F6)),
+                               border: InputBorder.none,
+                               contentPadding: EdgeInsets.symmetric(
+                                 horizontal: 16,
+                                 vertical: 16,
+                               ),
+                             ),
                           ),
                         ),
                         const SizedBox(height: 24),
@@ -316,14 +316,14 @@ class _FishLoginScreenState extends State<FishLoginScreen>
                                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                                     ),
                                   )
-                                : const Text(
-                                    "开始冒险",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                                                 : const Text(
+                                     "Start Adventure",
+                                     style: TextStyle(
+                                       color: Colors.white,
+                                       fontSize: 18,
+                                       fontWeight: FontWeight.bold,
+                                     ),
+                                   ),
                           ),
                         ),
                       ],
@@ -358,34 +358,34 @@ class _FishLoginScreenState extends State<FishLoginScreen>
                                 fontSize: 14,
                                 color: Colors.black87,
                               ),
-                              children: [
-                                const TextSpan(text: "我同意 "),
-                                WidgetSpan(
-                                  child: GestureDetector(
-                                    onTap: () => _showUserAgreement(),
-                                    child: const Text(
-                                      "用户协议",
-                                      style: TextStyle(
-                                        color: Color(0xFF3B82F6),
-                                        decoration: TextDecoration.underline,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                const TextSpan(text: " 和 "),
-                                WidgetSpan(
-                                  child: GestureDetector(
-                                    onTap: () => _showPrivacyPolicy(),
-                                    child: const Text(
-                                      "隐私政策",
-                                      style: TextStyle(
-                                        color: Color(0xFF3B82F6),
-                                        decoration: TextDecoration.underline,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                                                             children: [
+                                 const TextSpan(text: "I agree to the "),
+                                 WidgetSpan(
+                                   child: GestureDetector(
+                                     onTap: () => _showUserAgreement(),
+                                     child: const Text(
+                                       "User Agreement",
+                                       style: TextStyle(
+                                         color: Color(0xFF3B82F6),
+                                         decoration: TextDecoration.underline,
+                                       ),
+                                     ),
+                                   ),
+                                 ),
+                                 const TextSpan(text: " and "),
+                                 WidgetSpan(
+                                   child: GestureDetector(
+                                     onTap: () => _showPrivacyPolicy(),
+                                     child: const Text(
+                                       "Privacy Policy",
+                                       style: TextStyle(
+                                         color: Color(0xFF3B82F6),
+                                         decoration: TextDecoration.underline,
+                                       ),
+                                     ),
+                                   ),
+                                 ),
+                               ],
                             ),
                           ),
                         ),
@@ -405,26 +405,26 @@ class _FishLoginScreenState extends State<FishLoginScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("用户协议"),
+        title: const Text("User Agreement"),
         content: const SingleChildScrollView(
           child: Text(
-            "FirstMathFish 服务条款摘要：\n\n"
-            "• 仅用于教育目的\n"
-            "• 适合所有年龄段的用户，需要适当监督\n"
-            "• 用户负责适当使用\n"
-            "• 禁止商业使用或逆向工程\n"
-            "• 我们按原样提供应用程序以支持教育\n"
-            "• 应用程序应补充而非替代正规教育\n"
-            "• 我们可能会根据需要更新功能和条款\n\n"
-            "完整条款请访问我们的网站。\n"
-            "联系方式: support@good2good.tech",
+            "FirstMathFish Terms of Service Summary:\n\n"
+            "• Use the app for educational purposes only\n"
+            "• Designed for users of all ages with appropriate supervision\n"
+            "• Users are responsible for appropriate usage\n"
+            "• No commercial use or reverse engineering\n"
+            "• We provide the app 'as is' for educational support\n"
+            "• App should supplement, not replace formal education\n"
+            "• We may update features and terms as needed\n\n"
+            "For complete terms, visit our website.\n"
+            "Contact: support@good2good.tech",
             style: TextStyle(fontSize: 14),
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text("关闭"),
+            child: const Text("Close"),
           ),
         ],
       ),
@@ -435,26 +435,26 @@ class _FishLoginScreenState extends State<FishLoginScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("隐私政策"),
+        title: const Text("Privacy Policy"),
         content: const SingleChildScrollView(
           child: Text(
-            "FirstMathFish 隐私政策摘要：\n\n"
-            "• 我们只收集您的昵称和游戏进度\n"
-            "• 所有数据都存储在您的设备本地\n"
-            "• 不会与第三方共享个人信息\n"
-            "• 没有广告或跟踪\n"
-            "• 对所有用户都符合隐私要求\n"
-            "• 您可以随时删除您的数据\n"
-            "• 用户对其数据有完全控制权\n\n"
-            "完整隐私政策请访问我们的网站。\n"
-            "联系方式: privacy@good2good.tech",
+            "FirstMathFish Privacy Policy Summary:\n\n"
+            "• We collect only your nickname and game progress\n"
+            "• All data is stored locally on your device\n"
+            "• No personal information is shared with third parties\n"
+            "• No advertisements or tracking\n"
+            "• Privacy compliant for all users\n"
+            "• You can delete your data anytime\n"
+            "• Users have full control over their data\n\n"
+            "For complete privacy policy, visit our website.\n"
+            "Contact: privacy@good2good.tech",
             style: TextStyle(fontSize: 14),
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text("关闭"),
+            child: const Text("Close"),
           ),
         ],
       ),

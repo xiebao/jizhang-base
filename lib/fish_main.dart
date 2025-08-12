@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/home/fish_webview.dart';
 import 'services/fish_version_check_service.dart';
-import 'screens/auth/fish_login_screen.dart';
+import 'fish_login_screen.dart';
 import 'screens/home/fish_home_screen.dart';
 import 'fish_profile_screen.dart';
 import 'services/fish_auth_service.dart';
