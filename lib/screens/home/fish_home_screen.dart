@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import '../../services/auth_service.dart';
-import '../../services/audio_service.dart';
+import '../../services/fish_auth_service.dart';
+import '../../services/fish_audio_service.dart';
 
 // 鱼类类型枚举
 enum FishType {
@@ -19,14 +19,14 @@ enum FishType {
   final String name;
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class FishHomeScreen extends StatefulWidget {
+  const FishHomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<FishHomeScreen> createState() => _FishHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FishHomeScreenState extends State<FishHomeScreen> {
   @override
   void initState() {
     super.initState();

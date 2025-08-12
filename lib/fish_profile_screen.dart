@@ -1,15 +1,15 @@
 import "package:flutter/material.dart";
-import "../models/user.dart";
-import "../services/auth_service.dart";
+import "../models/fish_user.dart";
+import "../services/fish_auth_service.dart";
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class FishProfileScreen extends StatefulWidget {
+  const FishProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<FishProfileScreen> createState() => _FishProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> with TickerProviderStateMixin {
+class _FishProfileScreenState extends State<FishProfileScreen> with TickerProviderStateMixin {
   User? _user;
   late AnimationController _avatarController;
   late AnimationController _bubbleController;
