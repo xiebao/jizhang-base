@@ -1,5 +1,5 @@
-name: mathFishGame
-description: "MathFishGame - An educational math game app with ocean theme for learning basic arithmetic operations through interactive gameplay with fish characters."
+name: first_math_fish
+description: "FirstMathFish - An educational math game app with ocean theme for learning basic arithmetic operations through interactive gameplay with fish characters."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -56,16 +56,16 @@ dev_dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icons/logo.jpg"
+  image_path: "assets/icons/logo.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
   web:
     generate: true
-    image_path: "assets/icons/logo.jpg"
-    background_color: "#4CAF50"
-    theme_color: "#4CAF50"
+    image_path: "assets/icons/logo.png"
+    background_color: "#1976D2"
+    theme_color: "#1976D2"
   windows:
     generate: true
-    image_path: "assets/icons/logo.jpg"
+    image_path: "assets/icons/logo.png"
     icon_size: 48 # min:48, max:256, default: 48
 
 # For information on the generic Dart part of this file, see the

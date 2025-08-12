@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MathFishGame',
+      title: 'FirstMathFish',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -96,7 +96,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 const SizedBox(height: 24),
                 const Text(
-                  'MathFishGame',
+                  'FirstMathFish',
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
