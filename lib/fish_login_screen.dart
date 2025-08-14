@@ -251,14 +251,6 @@ class _FishLoginScreenState extends State<FishLoginScreen>
                     ),
                     child: Column(
                       children: [
-                                                 const Text(
-                           "Nickname",
-                           style: TextStyle(
-                             fontSize: 18,
-                             fontWeight: FontWeight.bold,
-                             color: Color(0xFF3B82F6),
-                           ),
-                         ),
                         const SizedBox(height: 16),
                         Container(
                           decoration: BoxDecoration(
