@@ -175,15 +175,16 @@ class _FishProfileScreenState extends State<FishProfileScreen> with TickerProvid
             ),
           ),
           
-          // 主要内容
+          // 主要内容 - 使用ListView
           _user == null
               ? const Center(child: CircularProgressIndicator(color: Colors.white))
               : SafeArea(
-                  child: Column(
+                  child: ListView(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                     children: [
                       // 顶部导航栏
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
                         child: Row(
                           children: [
                             Container(
@@ -243,7 +244,7 @@ class _FishProfileScreenState extends State<FishProfileScreen> with TickerProvid
                       
                       // 用户信息卡片
                       Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                        margin: const EdgeInsets.symmetric(vertical: 20),
                         padding: const EdgeInsets.all(30),
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -351,59 +352,50 @@ class _FishProfileScreenState extends State<FishProfileScreen> with TickerProvid
                         ),
                       ),
                       
-                      // 成绩统计区域
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  const Text(
-                                    '🏆 Your Achievements',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                      shadows: [
-                                        Shadow(
-                                          offset: Offset(0, 2),
-                                          blurRadius: 4,
-                                          color: Colors.black26,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white.withOpacity(0.2),
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    child: const Text(
-                                      '🌟',
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 20),
-                              Expanded(
-                                child: ListView(
-                                  children: [
-                                    _buildScoreCard('Basic', _user!.scores['Basic'] ?? []),
-                                    const SizedBox(height: 16),
-                                    _buildScoreCard('Intermediate', _user!.scores['Intermediate'] ?? []),
-                                    const SizedBox(height: 16),
-                                    _buildScoreCard('Advanced', _user!.scores['Advanced'] ?? []),
-                                  ],
+                      // 成绩统计标题
+                      Row(
+                        children: [
+                          const Text(
+                            '🏆 Your Achievements',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              shadows: [
+                                Shadow(
+                                  offset: Offset(0, 2),
+                                  blurRadius: 4,
+                                  color: Colors.black26,
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
+                          const Spacer(),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: const Text(
+                              '🌟',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        ],
                       ),
+                      
+                      const SizedBox(height: 20),
+                      
+                      // 成绩统计卡片
+                      _buildScoreCard('Basic', _user!.scores['Basic'] ?? []),
+                      const SizedBox(height: 16),
+                      _buildScoreCard('Intermediate', _user!.scores['Intermediate'] ?? []),
+                      const SizedBox(height: 16),
+                      _buildScoreCard('Advanced', _user!.scores['Advanced'] ?? []),
+                      
+                      // 底部间距
+                      const SizedBox(height: 40),
                     ],
                   ),
                 ),

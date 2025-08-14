@@ -96,12 +96,13 @@ class _FishHomeScreenState extends State<FishHomeScreen> {
                 ),
               ),
               
-              // 主要内容
-              Column(
+              // 主要内容 - 使用ListView
+              ListView(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                 children: [
                   // 顶部导航栏
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -138,7 +139,7 @@ class _FishHomeScreenState extends State<FishHomeScreen> {
                   
                   // 欢迎区域
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    margin: const EdgeInsets.symmetric(vertical: 20),
                     padding: const EdgeInsets.all(30),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -167,66 +168,67 @@ class _FishHomeScreenState extends State<FishHomeScreen> {
                           ),
                           textAlign: TextAlign.center,
                         ),
-             
+                        const SizedBox(height: 10),
+                        const Text(
+                          'Choose your math adventure and dive into learning!',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ],
                     ),
                   ),
                   
-                  // 难度选择区域
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Column(
-                        children: [
-                          // const Text(
-                          //   'Choose Your Adventure',
-                          //   style: TextStyle(
-                          //     fontSize: 20,
-                          //     fontWeight: FontWeight.bold,
-                          //     color: Colors.white,
-                          //     shadows: [
-                          //       Shadow(
-                          //         offset: Offset(0, 2),
-                          //         blurRadius: 4,
-                          //         color: Colors.black26,
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
-                          const SizedBox(height: 20),
-                          Expanded(
-                            child: ListView(
-                              children: [
-                                _DifficultyCard(
-                                  title: 'Basic',
-                                  subtitle: 'Addition & Subtraction',
-                                  icon: '➕',
-                                  color: const Color(0xFF10B981),
-                                  onTap: () => _startGame(context, 'Basic'),
-                                ),
-                                const SizedBox(height: 16),
-                                _DifficultyCard(
-                                  title: 'Intermediate',
-                                  subtitle: 'Multiplication',
-                                  icon: '✖️',
-                                  color: const Color(0xFFF59E0B),
-                                  onTap: () => _startGame(context, 'Intermediate'),
-                                ),
-                                const SizedBox(height: 16),
-                                _DifficultyCard(
-                                  title: 'Advanced',
-                                  subtitle: 'Division',
-                                  icon: '➗',
-                                  color: const Color(0xFFEF4444),
-                                  onTap: () => _startGame(context, 'Advanced'),
-                                ),
-                              ],
-                            ),
+                  // 难度选择标题
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 20),
+                    child: const Text(
+                      'Choose Your Adventure',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            offset: Offset(0, 2),
+                            blurRadius: 4,
+                            color: Colors.black26,
                           ),
                         ],
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
+                  
+                  // 难度选择卡片
+                  _DifficultyCard(
+                    title: 'Basic',
+                    subtitle: 'Addition & Subtraction',
+                    icon: '➕',
+                    color: const Color(0xFF10B981),
+                    onTap: () => _startGame(context, 'Basic'),
+                  ),
+                  const SizedBox(height: 16),
+                  _DifficultyCard(
+                    title: 'Intermediate',
+                    subtitle: 'Multiplication',
+                    icon: '✖️',
+                    color: const Color(0xFFF59E0B),
+                    onTap: () => _startGame(context, 'Intermediate'),
+                  ),
+                  const SizedBox(height: 16),
+                  _DifficultyCard(
+                    title: 'Advanced',
+                    subtitle: 'Division',
+                    icon: '➗',
+                    color: const Color(0xFFEF4444),
+                    onTap: () => _startGame(context, 'Advanced'),
+                  ),
+                  
+                  // 底部间距
+                  const SizedBox(height: 40),
                 ],
               ),
             ],

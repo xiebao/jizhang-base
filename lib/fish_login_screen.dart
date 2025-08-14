@@ -174,218 +174,219 @@ class _FishLoginScreenState extends State<FishLoginScreen>
 
           // 主要内容
           SafeArea(
-            child: Padding(
+            child: ListView(
               padding: const EdgeInsets.all(24.0),
-              child: Column(
-                children: [
-                  // 顶部导航栏
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () => Navigator.pop(context),
-                        icon: const Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                          size: 24,
-                        ),
+              children: [
+                // 顶部导航栏
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 24,
                       ),
-                      const Text(
-                        'FirstMathFish',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(width: 48), // 平衡布局
-                    ],
-                  ),
-                  
-                  const SizedBox(height: 40),
-                  
-                  // 欢迎区域
-                  Column(
-                    children: [
-                      const Text(
-                        '🐠',
-                        style: TextStyle(fontSize: 80),
-                      ),
-                      const SizedBox(height: 16),
-                                             const Text(
-                         'Welcome to Ocean Math World',
-                         style: TextStyle(
-                           color: Colors.white,
-                           fontSize: 28,
-                           fontWeight: FontWeight.bold,
-                         ),
-                         textAlign: TextAlign.center,
-                       ),
-                       const SizedBox(height: 8),
-                       const Text(
-                         'Learn math with ocean friends!',
-                         style: TextStyle(
-                           color: Colors.white70,
-                           fontSize: 16,
-                         ),
-                         textAlign: TextAlign.center,
-                       ),
-                    ],
-                  ),
-                  
-                  const SizedBox(height: 40),
-
-                  // 登录表单
-                  Container(
-                    padding: const EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.95),
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
                     ),
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 16),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey[100],
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: TextField(
-                            controller: _nicknameController,
-                            keyboardType: TextInputType.text,
-                                                         decoration: const InputDecoration(
-                               hintText: "Enter your nickname",
-                               prefixIcon: Icon(Icons.person, color: Color(0xFF3B82F6)),
-                               border: InputBorder.none,
-                               contentPadding: EdgeInsets.symmetric(
-                                 horizontal: 16,
-                                 vertical: 16,
-                               ),
-                             ),
+                    const Text(
+                      'FirstMathFish',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(width: 48), // 平衡布局
+                  ],
+                ),
+                
+                const SizedBox(height: 40),
+                
+                // 欢迎区域
+                Column(
+                  children: [
+                    const Text(
+                      '🐠',
+                      style: TextStyle(fontSize: 80),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'Welcome to Ocean Math World',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'Learn math with ocean friends!',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                
+                const SizedBox(height: 40),
+
+                // 登录表单
+                Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.95),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 20,
+                        offset: const Offset(0, 10),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 16),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: TextField(
+                          controller: _nicknameController,
+                          keyboardType: TextInputType.text,
+                          decoration: const InputDecoration(
+                            hintText: "Enter your nickname",
+                            prefixIcon: Icon(Icons.person, color: Color(0xFF3B82F6)),
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 16,
+                              vertical: 16,
+                            ),
                           ),
                         ),
-                        const SizedBox(height: 24),
-                        
-                        // 登录按钮
-                        Container(
-                          width: double.infinity,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF3B82F6), Color(0xFF06B6D4)],
+                      ),
+                      const SizedBox(height: 24),
+                      
+                      // 登录按钮
+                      Container(
+                        width: double.infinity,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF3B82F6), Color(0xFF06B6D4)],
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF3B82F6).withOpacity(0.3),
+                              blurRadius: 10,
+                              offset: const Offset(0, 5),
                             ),
-                            borderRadius: BorderRadius.circular(12),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0xFF3B82F6).withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 5),
+                          ],
+                        ),
+                        child: ElevatedButton(
+                          onPressed: _isLoading ? null : _login,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: _isLoading
+                              ? const SizedBox(
+                                  height: 20,
+                                  width: 20,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                                  ),
+                                )
+                              : const Text(
+                                  "Start Adventure",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                
+                const SizedBox(height: 24),
+                
+                // 隐私政策和用户协议
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.9),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.white.withOpacity(0.3)),
+                  ),
+                  child: Row(
+                    children: [
+                      Checkbox(
+                        value: _agreedToTerms,
+                        onChanged: (value) {
+                          setState(() {
+                            _agreedToTerms = value ?? false;
+                          });
+                        },
+                        activeColor: const Color(0xFF3B82F6),
+                      ),
+                      Expanded(
+                        child: RichText(
+                          text: TextSpan(
+                            style: const TextStyle(
+                              fontSize: 14,
+                              color: Colors.black87,
+                            ),
+                            children: [
+                              const TextSpan(text: "I agree to the "),
+                              WidgetSpan(
+                                child: GestureDetector(
+                                  onTap: () => _showUserAgreement(),
+                                  child: const Text(
+                                    "User Agreement",
+                                    style: TextStyle(
+                                      color: Color(0xFF3B82F6),
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const TextSpan(text: " and "),
+                              WidgetSpan(
+                                child: GestureDetector(
+                                  onTap: () => _showPrivacyPolicy(),
+                                  child: const Text(
+                                    "Privacy Policy",
+                                    style: TextStyle(
+                                      color: Color(0xFF3B82F6),
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
-                          child: ElevatedButton(
-                            onPressed: _isLoading ? null : _login,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.transparent,
-                              shadowColor: Colors.transparent,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                            ),
-                            child: _isLoading
-                                ? const SizedBox(
-                                    height: 20,
-                                    width: 20,
-                                    child: CircularProgressIndicator(
-                                      strokeWidth: 2,
-                                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                                    ),
-                                  )
-                                                                 : const Text(
-                                     "Start Adventure",
-                                     style: TextStyle(
-                                       color: Colors.white,
-                                       fontSize: 18,
-                                       fontWeight: FontWeight.bold,
-                                     ),
-                                   ),
-                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  
-                  const SizedBox(height: 24),
-                  
-                  // 隐私政策和用户协议
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.9),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.white.withOpacity(0.3)),
-                    ),
-                    child: Row(
-                      children: [
-                        Checkbox(
-                          value: _agreedToTerms,
-                          onChanged: (value) {
-                            setState(() {
-                              _agreedToTerms = value ?? false;
-                            });
-                          },
-                          activeColor: const Color(0xFF3B82F6),
-                        ),
-                        Expanded(
-                          child: RichText(
-                            text: TextSpan(
-                              style: const TextStyle(
-                                fontSize: 14,
-                                color: Colors.black87,
-                              ),
-                                                             children: [
-                                 const TextSpan(text: "I agree to the "),
-                                 WidgetSpan(
-                                   child: GestureDetector(
-                                     onTap: () => _showUserAgreement(),
-                                     child: const Text(
-                                       "User Agreement",
-                                       style: TextStyle(
-                                         color: Color(0xFF3B82F6),
-                                         decoration: TextDecoration.underline,
-                                       ),
-                                     ),
-                                   ),
-                                 ),
-                                 const TextSpan(text: " and "),
-                                 WidgetSpan(
-                                   child: GestureDetector(
-                                     onTap: () => _showPrivacyPolicy(),
-                                     child: const Text(
-                                       "Privacy Policy",
-                                       style: TextStyle(
-                                         color: Color(0xFF3B82F6),
-                                         decoration: TextDecoration.underline,
-                                       ),
-                                     ),
-                                   ),
-                                 ),
-                               ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+                
+                // 底部间距
+                const SizedBox(height: 40),
+              ],
             ),
           ),
         ],
