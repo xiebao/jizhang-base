@@ -3,241 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - KidsMath</title>
+    <title>Privacy Policy - XMoneyNote</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
             background-color: white;
-            padding: 40px;
-            border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
-        h1 {
-            color: #4CAF50;
+        
+        .header {
             text-align: center;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #666;
-            margin-top: 25px;
-        }
-        .effective-date {
-            text-align: center;
-            color: #666;
-            font-style: italic;
+            padding: 40px 0;
+            border-bottom: 2px solid #e9ecef;
             margin-bottom: 30px;
         }
-        .highlight {
-            background-color: #e8f5e8;
-            padding: 15px;
-            border-left: 4px solid #4CAF50;
-            margin: 20px 0;
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
+        
+        .header .subtitle {
+            color: #6c757d;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            padding: 0 20px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.3em;
+            margin: 25px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
         ul {
-            padding-left: 20px;
+            margin: 15px 0;
+            padding-left: 30px;
         }
+        
         li {
             margin-bottom: 8px;
         }
-        .contact-info {
-            background-color: #f0f8f0;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 30px;
+        
+        .highlight {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            border-radius: 4px;
         }
-        .app-logo {
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+        
+        .footer {
             text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #e9ecef;
+            margin-top: 40px;
+            color: #6c757d;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #6c757d;
             margin-bottom: 20px;
         }
-        .app-logo span {
-            font-size: 48px;
-            color: #4CAF50;
+        
+        .app-store-info {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
         }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
+        
+        .app-store-info h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .data-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .data-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .data-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 0 10px;
+            }
+            
+            .data-summary {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="app-logo">
-            <span>📚</span>
-            <h1>KidsMath Privacy Policy</h1>
+        <div class="header">
+            <h1>XMoneyNote</h1>
+            <p class="subtitle">Privacy Policy</p>
         </div>
         
-        <div class="effective-date">
-            <strong>Effective Date:</strong> January 1, 2025<br>
-            <strong>Last Updated:</strong> January 1, 2025
-        </div>
-
-        <div class="highlight">
-            <strong>Important:</strong> KidsMath is designed for children aged 4 and above. We are committed to protecting children's privacy and complying with all applicable privacy laws, including COPPA and GDPR.
-        </div>
-
-        <h2>1. Introduction</h2>
-        <p>This Privacy Policy describes how KidsMath ("we," "our," or "us") collects, uses, and protects information when you use our mobile application KidsMath (the "App"). We are committed to protecting the privacy of children and complying with applicable privacy laws, including the Children's Online Privacy Protection Act (COPPA) and the General Data Protection Regulation (GDPR).</p>
-
-        <h2>2. Information We Collect</h2>
-        
-        <h3>Personal Information</h3>
-        <ul>
-            <li><strong>Nickname:</strong> Users can create a nickname for their profile, which is stored locally on the device.</li>
-            <li><strong>Game Progress:</strong> We collect and store game scores, difficulty levels completed, and progress data locally on the device.</li>
-        </ul>
-
-        <h3>Non-Personal Information</h3>
-        <ul>
-            <li><strong>Device Information:</strong> We may collect non-personal information about your device, including device type, operating system version, and app version.</li>
-            <li><strong>Usage Data:</strong> We collect anonymous usage statistics to improve the app experience, such as which levels are played most frequently.</li>
-        </ul>
-
-        <h2>3. How We Use Information</h2>
-        <p>We use the collected information for the following purposes:</p>
-        <ul>
-            <li>To provide and maintain the App's functionality</li>
-            <li>To track and display user progress and achievements</li>
-            <li>To improve the App's educational content and user experience</li>
-            <li>To ensure the App operates correctly on your device</li>
-        </ul>
-
-        <h2>4. Data Storage and Security</h2>
-        
-        <h3>Local Storage</h3>
-        <ul>
-            <li>All personal data (nickname and game progress) is stored locally on your device</li>
-            <li>No personal information is transmitted to external servers</li>
-            <li>Data remains on your device and is not shared with third parties</li>
-        </ul>
-
-        <h3>Security Measures</h3>
-        <ul>
-            <li>We implement appropriate technical and organizational security measures</li>
-            <li>Data is protected using industry-standard encryption methods</li>
-            <li>Access to any data is restricted and controlled</li>
-        </ul>
-
-        <h2>5. Children's Privacy (COPPA Compliance)</h2>
-        <p>KidsMath is designed for children aged 4 and above. We are committed to protecting children's privacy:</p>
-        <ul>
-            <li>We do not collect personal information from children without parental consent</li>
-            <li>We do not share children's personal information with third parties</li>
-            <li>We do not use children's personal information for marketing purposes</li>
-            <li>Parents can request deletion of their child's data at any time</li>
-        </ul>
-
-        <h3>Parental Rights</h3>
-        <p>Parents have the right to:</p>
-        <ul>
-            <li>Review their child's personal information</li>
-            <li>Request deletion of their child's personal information</li>
-            <li>Refuse to allow further collection of their child's personal information</li>
-        </ul>
-
-        <h2>6. Third-Party Services</h2>
-        
-        <h3>Audio Content</h3>
-        <p>The App includes audio files (background music and sound effects) that are stored locally within the app bundle. No external audio services are used.</p>
-
-        <h3>No Analytics or Advertising</h3>
-        <ul>
-            <li>We do not use third-party analytics services</li>
-            <li>We do not display advertisements</li>
-            <li>We do not use tracking technologies or cookies</li>
-        </ul>
-
-        <h2>7. Data Retention</h2>
-        <ul>
-            <li>User data (nickname and game progress) is retained until the user uninstalls the app</li>
-            <li>Users can delete their data at any time by clearing the app's data through device settings</li>
-            <li>No data is retained on external servers</li>
-        </ul>
-
-        <h2>8. International Data Transfers</h2>
-        <p>Since all data is stored locally on the user's device, no international data transfers occur.</p>
-
-        <h2>9. Your Rights</h2>
-        <p>Depending on your location, you may have the following rights:</p>
-        <ul>
-            <li><strong>Access:</strong> Request access to your personal data</li>
-            <li><strong>Rectification:</strong> Request correction of inaccurate personal data</li>
-            <li><strong>Erasure:</strong> Request deletion of your personal data</li>
-            <li><strong>Portability:</strong> Request transfer of your personal data</li>
-            <li><strong>Objection:</strong> Object to processing of your personal data</li>
-        </ul>
-
-        <h2>10. Updates to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify users of any material changes by:</p>
-        <ul>
-            <li>Posting the new Privacy Policy in the App</li>
-            <li>Updating the "Last Updated" date at the top of this policy</li>
-            <li>For significant changes, we may provide additional notice through the App</li>
-        </ul>
-
-        <h2>11. Data Collection Summary for App Stores</h2>
-        
-        <h3>Data Collected</h3>
-        <ul>
-            <li><strong>Contact Info:</strong> None collected</li>
-            <li><strong>Identifiers:</strong> None collected</li>
-            <li><strong>Usage Data:</strong> Anonymous usage statistics (not linked to user identity)</li>
-            <li><strong>Diagnostics:</strong> Crash logs and performance data (not linked to user identity)</li>
-        </ul>
-
-        <h3>Data Use Summary</h3>
-        <ul>
-            <li><strong>App Functionality:</strong> Nickname and game progress for core app features</li>
-            <li><strong>Analytics:</strong> Anonymous usage data for app improvement</li>
-            <li><strong>Product Personalization:</strong> Game progress to customize user experience</li>
-        </ul>
-
-        <h3>Data Sharing Summary</h3>
-        <ul>
-            <li><strong>Third Parties:</strong> No data is shared with third parties</li>
-            <li><strong>Service Providers:</strong> No third-party service providers have access to user data</li>
-        </ul>
-
-        <h2>12. Compliance</h2>
-        <p>This Privacy Policy complies with:</p>
-        <ul>
-            <li>Children's Online Privacy Protection Act (COPPA)</li>
-            <li>General Data Protection Regulation (GDPR)</li>
-            <li>California Consumer Privacy Act (CCPA)</li>
-            <li>Google Play Developer Policy</li>
-            <li>Apple App Store Review Guidelines</li>
-        </ul>
-
-        <div class="contact-info">
-            <h2>13. Contact Information</h2>
-            <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
-            <p>
-                <strong>Email:</strong> privacy@good2good.tech<br>
-                <strong>Developer:</strong> Good2Good Development Team<br>
-                <strong>Address:</strong> 123 Main St, Anytown, USA
+        <div class="content">
+            <p class="last-updated">
+                <strong>Effective Date:</strong> January 1, 2025<br>
+                <strong>Last Updated:</strong> January 1, 2025
             </p>
-            <p>For parents with questions about their child's data or to request data deletion, please use the same contact information above.</p>
-        </div>
-
-        <div class="effective-date" style="margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
-            <small>This privacy policy was last updated on January 1, 2025. Please check back regularly for updates.</small>
+            
+            <div class="highlight">
+                <p><strong>Your Privacy Matters:</strong> XMoneyNote is designed with privacy as a core principle. All your financial data is stored locally on your device and never shared with third parties.</p>
+            </div>
+            
+            <h2>1. Introduction</h2>
+            <p>This Privacy Policy describes how XMoneyNote ("we," "our," or "us") collects, uses, and protects information when you use our mobile application XMoneyNote (the "App"). We are committed to protecting your privacy and ensuring the security of your financial data.</p>
+            
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Personal Information</h3>
+            <ul>
+                <li><strong>Username:</strong> Users create a username for account identification, stored locally on the device</li>
+                <li><strong>Email Address:</strong> Used for account registration and verification, stored locally on the device</li>
+                <li><strong>Password:</strong> Encrypted and stored locally for authentication purposes</li>
+                <li><strong>Financial Data:</strong> Transaction records, categories, amounts, dates, and notes are stored locally on the device</li>
+            </ul>
+            
+            <h3>2.2 Non-Personal Information</h3>
+            <ul>
+                <li><strong>Device Information:</strong> We may collect non-personal information about your device, including device type, operating system version, and app version</li>
+                <li><strong>Usage Data:</strong> We collect anonymous usage statistics to improve the app experience</li>
+            </ul>
+            
+            <h2>3. How We Use Information</h2>
+            <p>We use the collected information for the following purposes:</p>
+            <ul>
+                <li>To provide and maintain the App's core functionality</li>
+                <li>To track and display your financial transactions and statistics</li>
+                <li>To generate charts and reports for your financial analysis</li>
+                <li>To improve the App's user experience and features</li>
+                <li>To ensure the App operates correctly on your device</li>
+            </ul>
+            
+            <h2>4. Data Storage and Security</h2>
+            
+            <h3>4.1 Local Storage</h3>
+            <ul>
+                <li>All personal and financial data is stored locally on your device using SQLite database</li>
+                <li>No personal or financial information is transmitted to external servers</li>
+                <li>Data remains on your device and is not shared with third parties</li>
+                <li>Passwords are encrypted using SHA-256 hashing before storage</li>
+            </ul>
+            
+            <h3>4.2 Security Measures</h3>
+            <ul>
+                <li>We implement appropriate technical and organizational security measures</li>
+                <li>Data is protected using industry-standard encryption methods</li>
+                <li>Access to any data is restricted and controlled</li>
+                <li>All financial transactions are stored securely on your device</li>
+            </ul>
+            
+            <h2>5. Data Sharing</h2>
+            
+            <h3>5.1 No Third-Party Sharing</h3>
+            <ul>
+                <li>We do not share your personal or financial information with third parties</li>
+                <li>We do not sell, trade, or rent your information to others</li>
+                <li>We do not use your data for marketing purposes</li>
+                <li>We do not display advertisements</li>
+            </ul>
+            
+            <h3>5.2 Service Providers</h3>
+            <ul>
+                <li>We do not use third-party service providers that have access to your data</li>
+                <li>All data processing occurs locally on your device</li>
+            </ul>
+            
+            <h2>6. Data Retention</h2>
+            <ul>
+                <li>User data (username, email, transactions) is retained until the user uninstalls the app</li>
+                <li>Users can delete their data at any time by clearing the app's data through device settings</li>
+                <li>No data is retained on external servers</li>
+                <li>Users can export their data before uninstalling the app</li>
+            </ul>
+            
+            <h2>7. Your Rights</h2>
+            <p>Depending on your location, you may have the following rights:</p>
+            <ul>
+                <li><strong>Access:</strong> Request access to your personal data</li>
+                <li><strong>Rectification:</strong> Request correction of inaccurate personal data</li>
+                <li><strong>Erasure:</strong> Request deletion of your personal data</li>
+                <li><strong>Portability:</strong> Request transfer of your personal data</li>
+                <li><strong>Objection:</strong> Object to processing of your personal data</li>
+            </ul>
+            <p>To exercise these rights, please contact us using the information provided below.</p>
+            
+            <h2>8. Updates to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify users of any material changes by:</p>
+            <ul>
+                <li>Posting the new Privacy Policy in the App</li>
+                <li>Updating the "Last Updated" date at the top of this policy</li>
+                <li>For significant changes, we may provide additional notice through the App</li>
+            </ul>
+            
+            <div class="app-store-info">
+                <h3>App Store Submission Information</h3>
+                <div class="data-summary">
+                    <div class="data-card">
+                        <h4>Data Collection</h4>
+                        <ul>
+                            <li>Contact Info: Email address</li>
+                            <li>Identifiers: Username</li>
+                            <li>Usage Data: Anonymous statistics</li>
+                            <li>Financial Info: Transaction data (local)</li>
+                            <li>Diagnostics: Crash logs (anonymous)</li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <h4>Data Use</h4>
+                        <ul>
+                            <li>App Functionality: Core features</li>
+                            <li>Analytics: App improvement</li>
+                            <li>Personalization: Reports & statistics</li>
+                        </ul>
+                    </div>
+                    <div class="data-card">
+                        <h4>Data Sharing</h4>
+                        <ul>
+                            <li>Third Parties: None</li>
+                            <li>Service Providers: None</li>
+                            <li>Marketing: None</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
+                <p><strong>Email:</strong> privacy@xmoney-note.com</p>
+                <p><strong>Developer:</strong> XMoneyNote Development Team</p>
+                <p><strong>Address:</strong> [Your Business Address]</p>
+            </div>
+            
+            <h2>9. Compliance</h2>
+            <p>This Privacy Policy complies with:</p>
+            <ul>
+                <li>General Data Protection Regulation (GDPR)</li>
+                <li>California Consumer Privacy Act (CCPA)</li>
+                <li>Apple App Store Review Guidelines</li>
+                <li>Google Play Developer Policy</li>
+            </ul>
+            
+            <div class="footer">
+                <p>&copy; 2025 XMoneyNote Development Team. All rights reserved.</p>
+                <p>This privacy policy is effective as of January 1, 2025.</p>
+            </div>
         </div>
     </div>
 </body>

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/home/fish_webview.dart';
-import 'services/fish_version_check_service.dart';
-import 'fish_login_screen.dart';
-import 'screens/home/fish_home_screen.dart';
-import 'fish_profile_screen.dart';
-import 'services/fish_auth_service.dart';
+import 'fish_version_check_service.dart';
+import 'screens/auth/login_screen.dart';
+import 'screens/main/main_screen.dart';
+import 'services/auth_service.dart';
+import 'services/theme_service.dart';
+import 'utils/init_test_data.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await TestDataInitializer.initializeTestData();
   runApp(const MyApp());
 }
 
@@ -15,20 +19,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'FirstMathFish',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => ThemeService(),
+      child: Consumer<ThemeService>(
+        builder: (context, themeService, child) {
+          return MaterialApp(
+            title: 'XMoneyNote',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              useMaterial3: true,
+              brightness: Brightness.light,
+            ),
+            darkTheme: ThemeData(
+              primarySwatch: Colors.blue,
+              useMaterial3: true,
+              brightness: Brightness.dark,
+            ),
+            themeMode: themeService.themeMode,
+            initialRoute: '/',
+            routes: {
+              '/': (context) => const WelcomeScreen(),
+              '/login': (context) => const LoginScreen(),
+              '/home': (context) => const MainScreen(),
+            },
+          );
+        },
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const WelcomeScreen(),
-        '/login': (context) => const FishLoginScreen(),
-        '/home': (context) => const FishHomeScreen(),
-        '/profile': (context) => const FishProfileScreen(),
-      },
     );
   }
 }
@@ -90,13 +107,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(
-                  Icons.water,
+                  Icons.account_balance_wallet,
                   size: 100,
                   color: Colors.white,
                 ),
                 const SizedBox(height: 24),
                 const Text(
-                  'FirstMathFish',
+                  'XMoneyNote',
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -105,7 +122,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'Learn Math with Ocean Friends!',
+                  'Track your finances easily!',
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white70,
@@ -131,7 +148,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                   ),
                   child: const Text(
-                    'Start Learning',
+                    'Get Started',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,

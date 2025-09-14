@@ -1,120 +1,69 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kids_math_game/models/user.dart';
+import 'package:xmoney_note/models/user.dart';
 
 void main() {
   group('User Model Tests', () {
     late User testUser;
     late DateTime testCreatedAt;
-    late DateTime testLastLoginAt;
 
     setUp(() {
       testCreatedAt = DateTime(2024, 1, 1, 10, 0, 0);
-      testLastLoginAt = DateTime(2024, 1, 2, 15, 30, 0);
       testUser = User(
-        id: 'user123',
-        accountId: 'acc456',
-        username: 'testchild',
+        id: 1,
+        username: 'testuser',
+        email: 'test@example.com',
+        password: 'hashedpassword',
         createdAt: testCreatedAt,
-        lastLoginAt: testLastLoginAt,
       );
     });
 
     test('should create User with all required properties', () {
-      expect(testUser.id, equals('user123'));
-      expect(testUser.accountId, equals('acc456'));
-      expect(testUser.username, equals('testchild'));
+      expect(testUser.id, equals(1));
+      expect(testUser.username, equals('testuser'));
+      expect(testUser.email, equals('test@example.com'));
+      expect(testUser.password, equals('hashedpassword'));
       expect(testUser.createdAt, equals(testCreatedAt));
-      expect(testUser.lastLoginAt, equals(testLastLoginAt));
     });
 
-    test('should serialize User to JSON correctly', () {
-      final json = testUser.toJson();
+    test('should serialize User to Map correctly', () {
+      final map = testUser.toMap();
       
-      expect(json['id'], equals('user123'));
-      expect(json['accountId'], equals('acc456'));
-      expect(json['username'], equals('testchild'));
-      expect(json['createdAt'], equals(testCreatedAt.toIso8601String()));
-      expect(json['lastLoginAt'], equals(testLastLoginAt.toIso8601String()));
+      expect(map['id'], equals(1));
+      expect(map['username'], equals('testuser'));
+      expect(map['email'], equals('test@example.com'));
+      expect(map['password'], equals('hashedpassword'));
+      expect(map['createdAt'], equals(testCreatedAt.millisecondsSinceEpoch));
     });
 
-    test('should deserialize User from JSON correctly', () {
-      final json = {
-        'id': 'user123',
-        'accountId': 'acc456',
-        'username': 'testchild',
-        'createdAt': testCreatedAt.toIso8601String(),
-        'lastLoginAt': testLastLoginAt.toIso8601String(),
+    test('should deserialize User from Map correctly', () {
+      final map = {
+        'id': 1,
+        'username': 'testuser',
+        'email': 'test@example.com',
+        'password': 'hashedpassword',
+        'createdAt': testCreatedAt.millisecondsSinceEpoch,
       };
 
-      final user = User.fromJson(json);
+      final user = User.fromMap(map);
 
-      expect(user.id, equals('user123'));
-      expect(user.accountId, equals('acc456'));
-      expect(user.username, equals('testchild'));
+      expect(user.id, equals(1));
+      expect(user.username, equals('testuser'));
+      expect(user.email, equals('test@example.com'));
+      expect(user.password, equals('hashedpassword'));
       expect(user.createdAt, equals(testCreatedAt));
-      expect(user.lastLoginAt, equals(testLastLoginAt));
     });
 
     test('should create copy with updated properties', () {
-      final newLastLogin = DateTime(2024, 1, 3, 12, 0, 0);
       final updatedUser = testUser.copyWith(
         username: 'newusername',
-        lastLoginAt: newLastLogin,
+        email: 'new@example.com',
       );
 
-      expect(updatedUser.id, equals('user123'));
-      expect(updatedUser.accountId, equals('acc456'));
+      expect(updatedUser.id, equals(1));
       expect(updatedUser.username, equals('newusername'));
+      expect(updatedUser.email, equals('new@example.com'));
+      expect(updatedUser.password, equals('hashedpassword'));
       expect(updatedUser.createdAt, equals(testCreatedAt));
-      expect(updatedUser.lastLoginAt, equals(newLastLogin));
-    });
-
-    test('should implement equality correctly', () {
-      final sameUser = User(
-        id: 'user123',
-        accountId: 'acc456',
-        username: 'testchild',
-        createdAt: testCreatedAt,
-        lastLoginAt: testLastLoginAt,
-      );
-
-      final differentUser = User(
-        id: 'user456',
-        accountId: 'acc456',
-        username: 'testchild',
-        createdAt: testCreatedAt,
-        lastLoginAt: testLastLoginAt,
-      );
-
-      expect(testUser, equals(sameUser));
-      expect(testUser, isNot(equals(differentUser)));
-    });
-
-    test('should have consistent hashCode for equal objects', () {
-      final sameUser = User(
-        id: 'user123',
-        accountId: 'acc456',
-        username: 'testchild',
-        createdAt: testCreatedAt,
-        lastLoginAt: testLastLoginAt,
-      );
-
-      expect(testUser.hashCode, equals(sameUser.hashCode));
-    });
-
-    test('should have meaningful toString representation', () {
-      final stringRepresentation = testUser.toString();
-      
-      expect(stringRepresentation, contains('user123'));
-      expect(stringRepresentation, contains('acc456'));
-      expect(stringRepresentation, contains('testchild'));
-    });
-
-    test('should handle JSON serialization round trip', () {
-      final json = testUser.toJson();
-      final deserializedUser = User.fromJson(json);
-      
-      expect(deserializedUser, equals(testUser));
     });
   });
 }
